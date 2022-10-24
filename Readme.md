@@ -79,4 +79,10 @@ Set the `consumer_timeout` to a high value. Otherwise scheduled workflows can't 
 * Rework docker deployment
     * Investigate if the worker is able to run Nextflow in Docker containers when running in container itself
 
-
+# Documentation
+## Code exploration
+Pylint offers static codeanalysis that visualises the dependencies between classes in graph form. Its documentation is quite complete, so please refer to pyreverse --help for further info.
+This is an example of how html output can be created.
+```
+pyreverse -o html -m y --colorized -d docs/ -ASmy nf_cloud_frontend -p frontend
+```

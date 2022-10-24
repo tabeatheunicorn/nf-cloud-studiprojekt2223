@@ -1,0 +1,331 @@
+<html>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+      <div class="mermaid">
+    
+        classDiagram
+          class TextIOWrapper {
+            close()
+            detach()
+            fileno()
+            flush()
+            isatty()
+            read()
+            readable()
+            readline()
+            readlines()
+            reconfigure()
+            seek()
+            seekable()
+            tell()
+            truncate()
+            writable()
+            write()
+            writelines()
+          }
+          class _IOBase {
+            close()
+            fileno()
+            flush()
+            isatty()
+            readable()
+            readline()
+            readlines()
+            seek()
+            seekable()
+            tell()
+            truncate()
+            writable()
+            writelines()
+          }
+          class _TextIOBase {
+            close()
+            detach()
+            fileno()
+            flush()
+            isatty()
+            read()
+            readable()
+            readline()
+            readlines()
+            seek()
+            seekable()
+            tell()
+            truncate()
+            writable()
+            write()
+            writelines()
+          }
+          class RLock {
+            acquire()
+            release()
+          }
+          class ArgumentParser {
+            add_help : bool
+            allow_abbrev : bool
+            epilog : NoneType
+            exit_on_error : bool
+            formatter_class
+            fromfile_prefix_chars : NoneType
+            prog : NoneType
+            usage : NoneType, str
+            add_subparsers()
+            convert_arg_line_to_args(arg_line)
+            error(message)
+            exit(status, message)
+            format_help()
+            format_usage()
+            parse_args(args, namespace)
+            parse_intermixed_args(args, namespace)
+            parse_known_args(args, namespace)
+            parse_known_intermixed_args(args, namespace)
+            print_help(file)
+            print_usage(file)
+          }
+          class HelpFormatter {
+            add_argument(action)
+            add_arguments(actions)
+            add_text(text)
+            add_usage(usage, actions, groups, prefix)
+            end_section()
+            format_help()
+            start_section(heading)
+          }
+          class Namespace {
+          }
+          class _ActionsContainer {
+            argument_default
+            conflict_handler
+            description
+            prefix_chars
+            add_argument()
+            add_argument_group()
+            add_mutually_exclusive_group()
+            get_default(dest)
+            register(registry_name, value, object)
+            set_defaults()
+          }
+          class _ArgumentGroup {
+            title : NoneType
+          }
+          class _AttributeHolder {
+          }
+          class _Section {
+            formatter
+            heading : NoneType
+            items : list
+            parent
+            format_help()
+          }
+          class deque {
+            iterable : list
+            maxlen : int
+            append(x)
+            appendleft(x)
+            clear()
+            copy()
+            count(x)
+            extend(iterable)
+            extendleft(iterable)
+            index(x, start, end)
+            insert(i, x)
+            pop()
+            popleft()
+            remove(value)
+            reverse()
+            rotate(n)
+          }
+          class Process {
+          }
+          class BaseProcess {
+            authkey
+            daemon
+            daemon : NoneType
+            exitcode
+            ident
+            name
+            pid
+            sentinel
+            close()
+            is_alive()
+            join(timeout)
+            kill()
+            run()
+            start()
+            terminate()
+          }
+          class ComandLineInterface {
+            arguments
+          }
+          class AckHandler {
+            run()
+            send_ack(delivery_tag: Any)
+          }
+          class Worker {
+            start()
+          }
+          class WorkflowExecutor {
+            PRECEDING_SLASH_REGEX : ClassVar[re.Pattern]
+            SANITZE_REGEX : ClassVar[re.Pattern]
+            WHITESPACE_REGEX : ClassVar[re.Pattern]
+            remove_preceding_slash(some_string: str) str
+            run()
+            sanitize_workflow_name(name: str) str
+          }
+          class Path {
+            absolute()
+            chmod(mode)
+            cwd()
+            exists()
+            expanduser()
+            glob(pattern)
+            group()
+            home()
+            is_block_device()
+            is_char_device()
+            is_dir()
+            is_fifo()
+            is_file()
+            is_mount()
+            is_socket()
+            is_symlink()
+            iterdir()
+            lchmod(mode)
+            link_to(target)
+            lstat()
+            mkdir(mode, parents, exist_ok)
+            open(mode, buffering, encoding, errors, newline)
+            owner()
+            read_bytes()
+            read_text(encoding, errors)
+            readlink()
+            rename(target)
+            replace(target)
+            resolve(strict)
+            rglob(pattern)
+            rmdir()
+            samefile(other_path)
+            stat()
+            symlink_to(target, target_is_directory)
+            touch(mode, exist_ok)
+            unlink(missing_ok)
+            write_bytes(data)
+            write_text(data, encoding, errors)
+          }
+          class PurePath {
+            anchor
+            drive : property
+            name
+            parent
+            parents
+            parts
+            root : property
+            stem
+            suffix
+            suffixes
+            as_posix()
+            as_uri()
+            is_absolute()
+            is_relative_to()
+            is_reserved()
+            joinpath()
+            match(path_pattern)
+            relative_to()
+            with_name(name)
+            with_stem(stem)
+            with_suffix(suffix)
+          }
+          class _Accessor {
+          }
+          class _NormalAccessor {
+            chmod
+            lchmod
+            link_to
+            listdir
+            lstat
+            mkdir
+            open
+            rename
+            replace
+            rmdir
+            scandir
+            stat
+            symlink
+            unlink
+            utime
+            group(path)
+            owner(path)
+            readlink(path)
+          }
+          class Condition {
+            acquire
+            notifyAll
+            release
+            notify(n)
+            notify_all()
+            wait(timeout)
+            wait_for(predicate, timeout)
+          }
+          class Event {
+            isSet
+            clear()
+            is_set()
+            set()
+            wait(timeout)
+          }
+          class Thread {
+            daemon
+            daemon : bool
+            ident
+            name
+            name
+            native_id
+            getName()
+            isDaemon()
+            is_alive()
+            join(timeout)
+            run()
+            setDaemon(daemonic)
+            setName(name)
+            start()
+          }
+          class _RLock {
+            acquire(blocking, timeout)
+            release()
+          }
+          TextIOWrapper --|> _TextIOBase
+          _TextIOBase --|> _IOBase
+          ArgumentParser --|> _ActionsContainer
+          ArgumentParser --|> _AttributeHolder
+          Namespace --|> _AttributeHolder
+          _ArgumentGroup --|> _ActionsContainer
+          Process --|> BaseProcess
+          AckHandler --|> Thread
+          WorkflowExecutor --|> Process
+          Path --|> PurePath
+          _NormalAccessor --|> _Accessor
+          TextIOWrapper --* Thread : _stderr
+          RLock --* Condition : _lock
+          ArgumentParser --* ComandLineInterface : __arg_parser
+          HelpFormatter --* ArgumentParser : formatter_class
+          _Section --* HelpFormatter : _root_section
+          _Section --* HelpFormatter : _current_section
+          _Section --* HelpFormatter : _current_section
+          Namespace --* ComandLineInterface : __arguments
+          _ArgumentGroup --* ArgumentParser : _positionals
+          _ArgumentGroup --* ArgumentParser : _optionals
+          _ArgumentGroup --* ArgumentParser : _subparsers
+          _ArgumentGroup --* ArgumentParser : _subparsers
+          deque --* Condition : _waiters
+          Path --* Worker : __nf_bin
+          Path --* Worker : __project_data_path
+          Path --* WorkflowExecutor : __nf_bin
+          Path --* WorkflowExecutor : __project_data_path
+          _NormalAccessor --* Path : _accessor
+          Condition --* Event : _cond
+          Event --* Thread : _started
+          _RLock --* Condition : _lock
+  
+       </div>
+  </body>
+</html>

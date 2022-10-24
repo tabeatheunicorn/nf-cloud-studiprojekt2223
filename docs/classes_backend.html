@@ -1,0 +1,291 @@
+<html>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+      <div class="mermaid">
+    
+        classDiagram
+          class ArgumentParser {
+            add_help : bool
+            allow_abbrev : bool
+            epilog : NoneType
+            exit_on_error : bool
+            formatter_class
+            fromfile_prefix_chars : NoneType
+            prog : NoneType
+            usage : str, NoneType
+            add_subparsers()
+            convert_arg_line_to_args(arg_line)
+            error(message)
+            exit(status, message)
+            format_help()
+            format_usage()
+            parse_args(args, namespace)
+            parse_intermixed_args(args, namespace)
+            parse_known_args(args, namespace)
+            parse_known_intermixed_args(args, namespace)
+            print_help(file)
+            print_usage(file)
+          }
+          class HelpFormatter {
+            add_argument(action)
+            add_arguments(actions)
+            add_text(text)
+            add_usage(usage, actions, groups, prefix)
+            end_section()
+            format_help()
+            start_section(heading)
+          }
+          class _ActionsContainer {
+            argument_default
+            conflict_handler
+            description
+            prefix_chars
+            add_argument()
+            add_argument_group()
+            add_mutually_exclusive_group()
+            get_default(dest)
+            register(registry_name, value, object)
+            set_defaults()
+          }
+          class _ArgumentGroup {
+            title : NoneType
+          }
+          class _AttributeHolder {
+          }
+          class _Section {
+            formatter
+            heading : NoneType
+            items : list
+            parent
+            format_help()
+          }
+          class Enum {
+            name()
+            value()
+          }
+          class JWT {
+            SIGNING_ALGORTIHTM : ClassVar[str]
+            create_auth_token(secret_key: str, user: User, expires_at: int) str
+            decode_auth_token(secret_key: str, auth_token: str) dict
+            decode_auth_token_to_user(secret_key: str, auth_token: str) Tuple[User, bool]
+            is_token_valid(token_payload: dict) bool
+          }
+          class OpenIdConnect {
+            callback(request: Request, provider: str)
+            get_autodicovery(provider_client_config: Dict[str, Any]) Dict[Any, Any]
+            login(request: Request, provider: str)
+            redirect_to_frontend_callback(request: Request, token: str) Response
+            refresh_token(request: Request, user: User) Response
+          }
+          class ProviderType {
+            name
+          }
+          class Utility {
+            get_provider_client_config(provider_type: ProviderType, provider: str) Optional[Dict[str, Any]]
+          }
+          class ComandLineInterface {
+            start()
+          }
+          class ProjectsController {
+            count()
+            create()
+            create_folder(id: int)
+            delete(id: int)
+            delete_path(id: int)
+            download(w_id: int)
+            files(id: int)
+            finished(id: int)
+            index()
+            schedule(id: int)
+            show(id: int)
+            update(id: int)
+            upload_file(id: int)
+            workflow_log(id: int)
+          }
+          class UsersController {
+            callback(provider_type: str, provider: str)
+            logged_in()
+            login(provider_type: str, provider: str)
+            login_providers()
+            logout()
+            one_time_use_token()
+          }
+          class WorkflowControllers {
+            arguments(workflow: str)
+            workflows()
+          }
+          class SocketIoController {
+            on_join(data: dict)
+            on_leave(data: dict)
+          }
+          class Database {
+            add_cli_arguments(subparsers)
+            add_migration_subparser(subparsers)
+            run_migration_by_cli(cli_args)
+            run_migrations(database_url: str)
+          }
+          class Meta {
+            db_table : str
+          }
+          class Project {
+            completed_processes
+            file_directory
+            id
+            is_scheduled
+            name
+            submitted_processes
+            workflow
+            workflow_arguments
+            add_file(directory: str, filename: str, file: Union[io.BytesIO, io.StringIO])
+            create_folder(target_path: str, new_path: str) bool
+            delete_instance(recursive, delete_nullable)
+            get_path(path: str) pathlib.Path
+            get_queue_represenation() str
+            in_file_director(path: pathlib.Path) bool
+            remove_path(path: str) bool
+            to_dict() str
+          }
+          class Meta {
+            constraints : list
+            db_table : str
+            indexes : tuple
+          }
+          class User {
+            email
+            id
+            login_id
+            password
+            provider
+            provider_data
+            provider_type
+            to_dict() Dict[str, Any]
+          }
+          class Server {
+            add_cli_arguments(subparsers)
+            start(interface: Optional[str], port: Optional[int], environment: Optional[Environment])
+            start_by_cli(cli_args)
+          }
+          class Configuration {
+            get_config_and_env() tuple
+          }
+          class Environment {
+            name
+            get(environment: str)
+          }
+          class AcceptLanguage {
+            language_code
+            quality
+            from_language_value(language_value: str) AcceptLanguage
+            parse(accept_language_header: str) List[AcceptLanguage]
+          }
+          class RabbitMQ {
+            get_queue_statistics(queue: str) Tuple[int, int]
+            prepare_queues()
+          }
+          class Path {
+            absolute()
+            chmod(mode)
+            cwd()
+            exists()
+            expanduser()
+            glob(pattern)
+            group()
+            home()
+            is_block_device()
+            is_char_device()
+            is_dir()
+            is_fifo()
+            is_file()
+            is_mount()
+            is_socket()
+            is_symlink()
+            iterdir()
+            lchmod(mode)
+            link_to(target)
+            lstat()
+            mkdir(mode, parents, exist_ok)
+            open(mode, buffering, encoding, errors, newline)
+            owner()
+            read_bytes()
+            read_text(encoding, errors)
+            readlink()
+            rename(target)
+            replace(target)
+            resolve(strict)
+            rglob(pattern)
+            rmdir()
+            samefile(other_path)
+            stat()
+            symlink_to(target, target_is_directory)
+            touch(mode, exist_ok)
+            unlink(missing_ok)
+            write_bytes(data)
+            write_text(data, encoding, errors)
+          }
+          class PurePath {
+            anchor
+            drive : property
+            name
+            parent
+            parents
+            parts
+            root : property
+            stem
+            suffix
+            suffixes
+            as_posix()
+            as_uri()
+            is_absolute()
+            is_relative_to()
+            is_reserved()
+            joinpath()
+            match(path_pattern)
+            relative_to()
+            with_name(name)
+            with_stem(stem)
+            with_suffix(suffix)
+          }
+          class _Accessor {
+          }
+          class _NormalAccessor {
+            chmod
+            lchmod
+            link_to
+            listdir
+            lstat
+            mkdir
+            open
+            rename
+            replace
+            rmdir
+            scandir
+            stat
+            symlink
+            unlink
+            utime
+            group(path)
+            owner(path)
+            readlink(path)
+          }
+          ArgumentParser --|> _ActionsContainer
+          ArgumentParser --|> _AttributeHolder
+          _ArgumentGroup --|> _ActionsContainer
+          ProviderType --|> Enum
+          Environment --|> Enum
+          Path --|> PurePath
+          _NormalAccessor --|> _Accessor
+          ArgumentParser --* ComandLineInterface : __parser
+          HelpFormatter --* ArgumentParser : formatter_class
+          _Section --* HelpFormatter : _root_section
+          _Section --* HelpFormatter : _current_section
+          _Section --* HelpFormatter : _current_section
+          _ArgumentGroup --* ArgumentParser : _positionals
+          _ArgumentGroup --* ArgumentParser : _optionals
+          _ArgumentGroup --* ArgumentParser : _subparsers
+          _ArgumentGroup --* ArgumentParser : _subparsers
+          Path --* Project : __file_directory
+          _NormalAccessor --* Path : _accessor
+  
+       </div>
+  </body>
+</html>
