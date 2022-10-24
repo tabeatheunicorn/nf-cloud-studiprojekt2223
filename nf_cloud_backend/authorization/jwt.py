@@ -1,27 +1,29 @@
 # std imports
 import datetime
+import logging
 from typing import ClassVar, Tuple
-
-# 3rd party imports
-import jwt
 
 # internal imports
 from nf_cloud_backend.models.user import User
 
+# 3rd party imports
+import jwt
+
+logger = logging.getLogger(__file__)
 class JWT:
     """
-    Class to encode and decode JWT tokens
+    Class to encode and decode JWT tokens. Algorithm is hardcoded as ClassVar
+    Is a wrapper to given jwt module
     """
 
+    # TODO Offer more sigingn algorithms as type?
     SIGNING_ALGORTIHTM: ClassVar[str] = "HS256"
-    """JWT signing algorithm
-    """
 
-
+    # TODO Secret should probably be loaded from ENV
     @classmethod
     def create_auth_token(cls, secret_key: str, user: User, expires_at: int) -> str:
         """
-        Creates an authentication token for the given user and provider
+        Creates an authentication token for the given user and provider. Internally uses jwt
 
         Parameters
         ----------
@@ -47,7 +49,7 @@ class JWT:
     @classmethod
     def decode_auth_token(cls, secret_key: str, auth_token: str) -> dict:
         """
-        Decoded the given JWT token from the given authentication header. 
+        Decoded the given JWT token from the given authentication header.
 
         Parameters
         ----------
@@ -61,6 +63,7 @@ class JWT:
         dict
             Decoded payload
         """
+        # TODO Expiration date should probably be checked?
         return jwt.decode(
             auth_token,
             secret_key,
@@ -82,6 +85,7 @@ class JWT:
         bool
             True if valid.
         """
+        raise NotImplementedError
         
 
     @classmethod
