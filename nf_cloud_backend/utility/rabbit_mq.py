@@ -1,9 +1,10 @@
-import pika
 import time
 import traceback
 from typing import Tuple
 
+import pika
 from nf_cloud_backend import app, config
+
 
 class RabbitMQ:
     @staticmethod
@@ -46,6 +47,7 @@ class RabbitMQ:
         -------
         Returns a tuple with consumer count and message count
         """
+        # TODO Use queue name?
         try:
             # Establish connection
             connection = pika.BlockingConnection(pika.URLParameters(config['rabbit_mq']['url'] ))
