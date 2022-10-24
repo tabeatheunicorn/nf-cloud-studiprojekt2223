@@ -1,20 +1,21 @@
 # std imports
 from __future__ import annotations
+
 import io
 import json
+import logging
 import pathlib
 import shutil
-from typing import Union
-
-# 3rd party imports
-from peewee import BigAutoField, \
-    CharField, \
-    BooleanField, \
-    IntegerField
-from playhouse.postgres_ext import BinaryJSONField
+from typing import Optional, Union
 
 # internal import
-from nf_cloud_backend import config, db_wrapper as db
+from nf_cloud_backend import config
+from nf_cloud_backend import db_wrapper as db
+# 3rd party imports
+from peewee import BigAutoField, BooleanField, CharField, IntegerField
+from playhouse.postgres_ext import BinaryJSONField
+
+logger = logging.getLogger(__file__)
 
 class Project(db.Model):
     id = BigAutoField(primary_key=True)
@@ -34,11 +35,12 @@ class Project(db.Model):
         self.__create_file_directory()
 
     @property
-    def file_directory(self) -> pathlib.Path:
+    def file_directory(self) -> Optional[pathlib.Path]:
         return self.__file_directory
 
     def __create_file_directory(self):
         self.__file_directory = pathlib.Path(config["upload_path"]).joinpath(str(self.id)).absolute()
+        logger.debug("Project file dir at %s", self.__file_directory)
         self.__file_directory.mkdir(parents=True, exist_ok=True)
 
     def __delete_file_directory(self):
@@ -57,6 +59,7 @@ class Project(db.Model):
         delete_nullable : bool, optional
             Delete related models that have a null foreign key. If False nullable relations will be set to NULL
         """
+        # TODO Should recursive and delete_nullable be passed on to super?
         deleted_rows = super().delete_instance(recursive=False, delete_nullable=False)
         if deleted_rows > 0:
             self.__delete_file_directory()
@@ -94,6 +97,8 @@ class Project(db.Model):
         str
             Save path
         """
+        # Todo: Checking if path is a subpath of the allowed directory might work -> 
+        # https://stackoverflow.com/questions/3812849/how-to-check-whether-a-directory-is-a-sub-directory-of-another-directory
         if len(path) > 0 and path[0] == "/":
             return path[1:]
         return path.replace("../", "")

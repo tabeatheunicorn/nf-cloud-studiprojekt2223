@@ -3,19 +3,16 @@ from typing import Any, Dict
 
 # 3rd party imports
 from flask_login import UserMixin
-from peewee import (
-    BigAutoField,
-    CharField,
-    SQL
-)
-from playhouse.postgres_ext import JSONField
-
 # internal imports
 from nf_cloud_backend import db_wrapper
+from peewee import SQL, BigAutoField, CharField
+from playhouse.postgres_ext import JSONField
+
 
 class User(db_wrapper.Model, UserMixin):
     """
     User implementation for login and permission management.
+    Describes User ORM Model
     """
 
     id = BigAutoField(primary_key=True)
