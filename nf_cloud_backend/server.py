@@ -1,9 +1,14 @@
 # std imports
+import logging
 from typing import Optional
 
+from devtools import debug
+
 # internal imports
-from nf_cloud_backend import app, env, config, socketio
+from nf_cloud_backend import app, config, env, socketio
 from nf_cloud_backend.utility.configuration import Environment
+
+logger = logging.getLogger(__file__)
 
 class Server:
     """
@@ -16,9 +21,14 @@ class Server:
         Starts the flask web server.
         """
         global env
+        logger.debug("Starting app with env %s", env)
         if environment is not None:
             env = environment
         print(f"Start NF-Cloud webinterface in {env.name} mode on {interface}:{config['port']}")
+        if env == Environment.development:
+            debug(app.url_map)
+        else:
+            debug(env)
         socketio.run(
             app,
             interface if interface is not None else config['interface'],
