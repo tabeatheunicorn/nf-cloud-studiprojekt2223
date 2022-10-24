@@ -61,3 +61,8 @@ Each argument is defined by a name and a type.
     * type: `file-glob`
 If a default value is provided, just add a additional key `value` with the actual value.
 
+
+----
+
+# Exploring the code
+Each Flaskapp has an attribute url_map (see https://stackoverflow.com/questions/13317536/get-list-of-all-routes-defined-in-the-flask-app). Upon starting the app, if the environment is a dev environment, all known routes are displayed on the console.
