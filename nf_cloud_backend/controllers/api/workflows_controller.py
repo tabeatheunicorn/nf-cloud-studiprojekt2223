@@ -1,9 +1,9 @@
 # external imports
-from flask import jsonify
-
+from flask import Blueprint, jsonify
 # internal imports
 from nf_cloud_backend import app, config
 
+# workflow_blueprint = Blueprint("workflows", __name__, te)
 
 class WorkflowControllers:
     """
