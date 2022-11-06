@@ -17,7 +17,8 @@
     "lodash.debounce": "^4.0.8",
     "nuxt": "^2.15.6",
     "socket.io-client": "4.4.0",
-    "toastr": "^2.1.4"
+    "toastr": "^2.1.4",
+    "vue3-ace-editor": "^2.2.2"
   },
   "devDependencies": {
     "fibers": "^5.0.0",
