@@ -10,7 +10,7 @@ from flask import Response, jsonify, request, send_file
 from flask_login import login_required
 
 # internal imports
-from nf_cloud_backend import app
+from nf_cloud_backend import app, config
 from nf_cloud_backend import db_wrapper as db
 from nf_cloud_backend import socketio
 from nf_cloud_backend.models.project import Project
@@ -522,6 +522,5 @@ class ProjectsController:
             return response
 
 
-            return response
 
 
