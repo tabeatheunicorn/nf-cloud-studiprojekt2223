@@ -314,6 +314,7 @@ export default {
             })
             this.$socket.on("new-progress", data => {
                 console.error(data)
+                // handle graph creation here
                 this.project.submitted_processes = data.submitted_processes
                 this.project.completed_processes = data.completed_processes
             })
