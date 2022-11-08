@@ -1,17 +1,19 @@
 # std imports
-from collections import defaultdict
 import json
+from collections import defaultdict
 from urllib.parse import unquote
 
-# 3rd party imports
-from flask import request, jsonify, send_file, Response
-from flask_login import login_required
 import pika
 import zipstream
-
+# 3rd party imports
+from flask import Response, jsonify, request, send_file
+from flask_login import login_required
 # internal imports
-from nf_cloud_backend import app, config, socketio, db_wrapper as db
+from nf_cloud_backend import app, config
+from nf_cloud_backend import db_wrapper as db
+from nf_cloud_backend import socketio
 from nf_cloud_backend.models.project import Project
+
 
 class ProjectsController:
     """
@@ -429,7 +431,7 @@ class ProjectsController:
 
     @staticmethod
     @app.route("/api/projects/<int:id>/workflow-log", methods=["POST"])
-    @login_required
+    # @login_required
     def workflow_log(id: int):
         """
         Endpoint for Nextflow to report log.
@@ -448,7 +450,6 @@ class ProjectsController:
         """
         errors = defaultdict(list)
         workflow_log = json.loads(request.data.decode("utf-8"))
-
         if workflow_log is None:
             errors["request body"].append("cannot be empty")
         elif not isinstance(workflow_log, dict):

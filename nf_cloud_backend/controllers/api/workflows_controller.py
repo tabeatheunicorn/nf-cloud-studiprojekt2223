@@ -1,9 +1,8 @@
 # external imports
-from flask import Blueprint, jsonify
+from flask import jsonify
 # internal imports
 from nf_cloud_backend import app, config
 
-# workflow_blueprint = Blueprint("workflows", __name__, te)
 
 class WorkflowControllers:
     """
@@ -36,3 +35,9 @@ class WorkflowControllers:
         return jsonify({
             "arguments": config["workflows"][workflow]["args"]["dynamic"]
         })
+<<<<<<< HEAD
+=======
+    
+        
+    
+>>>>>>> master
