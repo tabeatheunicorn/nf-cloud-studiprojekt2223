@@ -1,5 +1,6 @@
 # external imports
 from flask import jsonify
+
 # internal imports
 from nf_cloud_backend import app, config
 
@@ -35,9 +36,3 @@ class WorkflowControllers:
         return jsonify({
             "arguments": config["workflows"][workflow]["args"]["dynamic"]
         })
-<<<<<<< HEAD
-=======
-    
-        
-    
->>>>>>> master
