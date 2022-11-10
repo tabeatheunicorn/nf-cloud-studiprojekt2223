@@ -7173,6 +7173,11 @@ plotly.js-basic-dist-min@^2.14.0:
   resolved "https://registry.yarnpkg.com/plotly.js-basic-dist-min/-/plotly.js-basic-dist-min-2.16.1.tgz#d8859a42ae487e18e379a76343072d2268504e46"
   integrity sha512-+T2FPbw7rK+mC6/JGyUBj+rnDyJpmbgBQgA65SdYOkQBGz1i1K6yV1M4cwfg/3viXgwehQ9agtVBzD8+2CnWqw==
 
+plotly.js-dist@^2.16.1:
+  version "2.16.1"
+  resolved "https://registry.yarnpkg.com/plotly.js-dist/-/plotly.js-dist-2.16.1.tgz#e2ce478f2d4db93933b6d3b434c4c73422119eb7"
+  integrity sha512-xyZo/P1fkkt3TcQedUVeBn76Mh9A/jBDdc1gzky0F4VCxNyO6eIJcL+PGFn0OCcQo+9ZcrYhLLnF6QTssu7Bmg==
+
 pnp-webpack-plugin@^1.6.4:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/pnp-webpack-plugin/-/pnp-webpack-plugin-1.7.0.tgz#65741384f6d8056f36e2255a8d67ffc20866f5c9"

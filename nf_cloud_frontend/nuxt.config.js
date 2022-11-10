@@ -31,6 +31,7 @@ export default {
     "~/plugins/api_error_handling.js",
     "~/plugins/bootstrap_modal_control.client.js",
     "~/plugins/socket.io.client.js",
+    "~/plugins/plotly-full.js"
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
