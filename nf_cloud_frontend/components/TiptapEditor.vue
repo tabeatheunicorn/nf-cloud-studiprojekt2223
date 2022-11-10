@@ -19,7 +19,7 @@ export default {
 
     mounted() {
         this.editor = new Editor({
-            content: '<p>I’m running Tiptap with Vue.js. 🎉</p>',
+            content: '<h1>Example Workflow Editor</h1>',
             extensions: [
                 StarterKit,
             ],

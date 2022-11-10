@@ -14,7 +14,6 @@
                 </NuxtLink>
             </li>
         </ul>
-        <AceEditor>Test</AceEditor>
         <Pagination :parent_event_bus="local_event_bus" :total_items="total_project_count" :items_per_page="projects_per_page"></Pagination>
     </div>
 </template>
