@@ -1,40 +1,27 @@
 <template>
-<div id="div">
-</div>
+  <Plotly :data="data" :layout="layout"></Plotly>
 </template>
 
 <script>
+import { Plotly } from "@rleys/vue-plotly-basic";
+
 export default {
-  head(){
-        return {
-            title: "Testpage",
-            script: [
-                {
-                    hid: "plotly",
-                    src: "https://cdn.plot.ly/plotly-2.16.1.min.js",
-                    defer: true,
-                    // callback: () => { this.isPlotlyLoaded = true }
-                }
-            ]
-        }
-    },
-
-    
-    components: {
-    Plotly
+  components: {
+    Plotly,
   },
-
   data() {
     return {
-      data:[{
-        x: [1,2,3,4],
-        y: [10,15,13,17],
-        type:"scatter"
-      }],
-      layout:{
-        title: "My graph"
-      }
-    }
-  }
-}
+      data: [
+        {
+          x: [1, 2, 3, 4, 5, 6],
+          y: [10, 15, 13, 17, 22, 3],
+          type: "scatter",
+        },
+      ],
+      layout: {
+        title: "My graph",
+      },
+    };
+  },
+};
 </script>
