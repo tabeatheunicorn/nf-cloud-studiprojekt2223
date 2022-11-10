@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { plotly } from "~/components/Plotly";
+import { plotly } from "~/components/PlotlyImport/Plotly";
 
 export default {
   components: {
