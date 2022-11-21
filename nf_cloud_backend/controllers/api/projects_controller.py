@@ -8,11 +8,13 @@ import zipstream
 # 3rd party imports
 from flask import Response, jsonify, request, send_file
 from flask_login import login_required
+
 # internal imports
-from nf_cloud_backend import app, config
+from nf_cloud_backend import app
 from nf_cloud_backend import db_wrapper as db
 from nf_cloud_backend import socketio
 from nf_cloud_backend.models.project import Project
+from nf_cloud_backend.utility.configuration import Configuration
 
 
 class ProjectsController:
@@ -385,9 +387,9 @@ class ProjectsController:
                 project.is_scheduled = True
                 project.save()
                 try:
-                    connection = pika.BlockingConnection(pika.URLParameters(config['rabbit_mq']['url']))
+                    connection = pika.BlockingConnection(pika.URLParameters(Configuration.values()['rabbit_mq']['url']))
                     channel = connection.channel()
-                    channel.basic_publish(exchange='', routing_key=config['rabbit_mq']['project_workflow_queue'], body=project.get_queue_represenation())
+                    channel.basic_publish(exchange='', routing_key=Configuration.values()['rabbit_mq']['project_workflow_queue'], body=project.get_queue_represenation())
                     connection.close()
                 except BaseException as exception:
                     transaction.rollback()
@@ -517,6 +519,9 @@ class ProjectsController:
                     yield from stream
             response = Response(build_stream(), mimetype='application/zip')
             response.headers["Content-Disposition"] = f"attachment; filename={project.name}--{path.replace('/', '+')}.zip"
+            return response
+
+
             return response
 
 
