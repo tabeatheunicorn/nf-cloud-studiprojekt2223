@@ -8,6 +8,7 @@ from flask import Flask
 from nf_cloud_backend import app, socketio
 from nf_cloud_backend.utility.configuration import Configuration
 
+
 def get_app() -> Flask:
     """
     Returns the initialized application, e.g. for gunicorn.
@@ -30,7 +31,7 @@ class Server:
         Starts the flask web server.
         """
         socketio.run(
-            app,
+            get_app(),
             interface if interface is not None else Configuration.values()['interface'],
             port if port is not None else Configuration.values()['port'],
             debug = Configuration.values()['debug'],
