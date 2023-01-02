@@ -9,6 +9,7 @@ local.env
 nf_cloud.local.config.yaml
 nextflow
 
+work/
 
 
 # uploads
