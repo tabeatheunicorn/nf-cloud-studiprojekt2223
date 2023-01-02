@@ -22,6 +22,7 @@ class SocketIoController:
             Dict with key `room` and value room name
         """
         room = f"project{data['project_id']}"
+        print(f"Joining room {room=}")
         join_room(room)
 
     @staticmethod
@@ -36,4 +37,5 @@ class SocketIoController:
             Dict with key `room` and value room name
         """
         room = f"project{data['project_id']}"
+        print(f"Leaving room {room=}")
         leave_room(room)
