@@ -2,8 +2,8 @@
 from flask_socketio import join_room, leave_room
 
 # internal imports
-from nf_cloud_backend import socketio, app
-from nf_cloud_backend.authorization import jwt
+from nf_cloud_backend import socketio
+
 
 class SocketIoController:
     """
