@@ -1,5 +1,7 @@
 # IDE files
 .vscode
+.idea
+.nextflow
 
 # Local development files like database files
 /.db
@@ -7,9 +9,12 @@ local.env
 nf_cloud.local.config.yaml
 nextflow
 
+
+
 # uploads
 /uploads
 /deploy_test_uploads
+/tmp
 
 # npm
 node_modules/
