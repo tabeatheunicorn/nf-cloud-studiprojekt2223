@@ -5,7 +5,7 @@
 work/
 .nextflow/
 .nextflow.log.[0-9]*
-.result.log.[0-9]*
+result.log.[0-9]*
 *.txt
 *.txt.[0-9]*
 *timeline
