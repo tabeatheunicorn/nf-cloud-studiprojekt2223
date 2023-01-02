@@ -1,6 +1,10 @@
 # IDE files
 .vscode
 
+# Locally created assets
+work/
+.nextflow/
+
 # TEmpfiles for workflows
 /tmp
 # Local development files like database files
