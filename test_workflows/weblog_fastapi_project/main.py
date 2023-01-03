@@ -77,9 +77,6 @@ def filter_messages_per_process(hash: Optional[str] = None):
 @app.get("/wspage")
 async def get_websocket_testpage():
     return HTMLResponse(html)
-
-
-async def keep_alive(websocket: WebSocket, interval: float):
     while True:
         await websocket.keep_alive(interval=interval)
         await asyncio.sleep(interval)
