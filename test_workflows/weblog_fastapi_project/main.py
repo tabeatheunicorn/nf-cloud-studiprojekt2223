@@ -1,3 +1,4 @@
+import asyncio
 import logging
 from typing import Optional
 
@@ -8,11 +9,14 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import HTMLResponse, JSONResponse
 from html_string import html
 from pydantic import BaseModel
-from weblog.weblog_datastructures import (WeblogMetadata, WeblogStructure,
-                                          WeblogTrace)
+from weblog.weblog_datastructures import WeblogListStructure, WeblogStructure
 
 app = FastAPI()
 
+manager = ConnectionManager()
+
+process_messages: WeblogListStructure = []
+overall_messages: WeblogListStructure = []
 
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
@@ -22,14 +26,6 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
     return JSONResponse(
         content=content, status_code=status.HTTP_422_UNPROCESSABLE_ENTITY
     )
-
-
-process_messages: list[WeblogStructure] = []
-overall_messages: list[WeblogStructure] = []
-
-
-manager = ConnectionManager()
-
 
 @app.get("/")
 async def root():
@@ -43,6 +39,7 @@ async def post_weblog_nextflow(data: WeblogStructure):
     else:
         process_messages.append(data)
     await manager.broadcast(data.json())
+    print("Broadcast done")
 
 
 @app.get("/progress", response_class=HTMLResponse)
@@ -77,25 +74,24 @@ def filter_messages_per_process(hash: Optional[str] = None):
         }
 
 
-@app.get("/none_process_messages")
-def filter_none_process_messages(filter=None):
-    if not filter:
-        return overall_messages
-
-
 @app.get("/wspage")
-async def get():
+async def get_websocket_testpage():
     return HTMLResponse(html)
+
+
+async def keep_alive(websocket: WebSocket, interval: float):
+    while True:
+        await websocket.keep_alive(interval=interval)
+        await asyncio.sleep(interval)
 
 
 @app.websocket("/ws/{client_id}")
 async def websocket_endpoint(websocket: WebSocket, client_id: int):
     await manager.connect(websocket)
     try:
+        for message in process_messages:
+            await manager.send_personal_message(message=message.json(), websocket=websocket)
         while True:
-            data = await websocket.receive_text()
-            await manager.send_personal_message(f"You wrote: {data}", websocket)
-            await manager.broadcast(f"Client #{client_id} says: {data}")
+            await websocket.receive_text()
     except WebSocketDisconnect:
         manager.disconnect(websocket)
-        await manager.broadcast(f"Client #{client_id} left the chat")

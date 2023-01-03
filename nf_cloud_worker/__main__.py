@@ -1,7 +1,8 @@
 # std imports
-from pathlib import Path
-from multiprocessing import Event
+import logging
 import signal
+from multiprocessing import Event
+from pathlib import Path
 
 # 3rd party imports
 import yaml
@@ -11,6 +12,7 @@ from mergedeep import merge
 from nf_cloud_worker.comand_line_interface import ComandLineInterface as CLI
 from nf_cloud_worker.worker import Worker
 
+logger = logging.getLogger(__name__)
 
 def main():
     """
@@ -36,7 +38,8 @@ def main():
                     workflows,
                     yaml.load(workflow_file, Loader=yaml.CLoader).get("workflows", {})
                 )
-
+    logger.info(f"{workflows=}")
+    logger.info(f"{cli.arguments=}")
     worker = Worker(
         Path(cli.arguments.nf_bin).absolute(),
         cli.arguments.nf_cloud_url,
@@ -52,4 +55,5 @@ def main():
     worker.start()
 
 if __name__ == "__main__":
+    logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.INFO)
     main()

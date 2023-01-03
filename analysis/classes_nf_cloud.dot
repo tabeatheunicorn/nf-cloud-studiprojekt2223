@@ -1,0 +1,23 @@
+digraph "classes_nf_cloud" {
+rankdir=BT
+charset="utf-8"
+"nf_cloud_backend.authorization.jwt.JWT" [color="antiquewhite", fontcolor="black", label="nf_cloud_backend.authorization.jwt.JWT", shape="record", style="filled"];
+"nf_cloud_backend.authorization.openid_connect.OpenIdConnect" [color="antiquewhite", fontcolor="black", label="nf_cloud_backend.authorization.openid_connect.OpenIdConnect", shape="record", style="filled"];
+"nf_cloud_backend.authorization.provider_type.ProviderType" [color="antiquewhite", fontcolor="black", label="nf_cloud_backend.authorization.provider_type.ProviderType", shape="record", style="filled"];
+"nf_cloud_backend.authorization.utility.Utility" [color="antiquewhite", fontcolor="black", label="nf_cloud_backend.authorization.utility.Utility", shape="record", style="filled"];
+"nf_cloud_backend.command_line_interface.ComandLineInterface" [color="aliceblue", fontcolor="black", label="nf_cloud_backend.command_line_interface.ComandLineInterface", shape="record", style="filled"];
+"nf_cloud_backend.controllers.api.projects_controller.ProjectsController" [color="aquamarine", fontcolor="black", label="nf_cloud_backend.controllers.api.projects_controller.ProjectsController", shape="record", style="filled"];
+"nf_cloud_backend.controllers.api.users_controller.UsersController" [color="aquamarine", fontcolor="black", label="nf_cloud_backend.controllers.api.users_controller.UsersController", shape="record", style="filled"];
+"nf_cloud_backend.controllers.api.workflows_controller.WorkflowControllers" [color="aquamarine", fontcolor="black", label="nf_cloud_backend.controllers.api.workflows_controller.WorkflowControllers", shape="record", style="filled"];
+"nf_cloud_backend.controllers.socketio_controller.SocketIoController" [color="aquamarine", fontcolor="black", label="nf_cloud_backend.controllers.socketio_controller.SocketIoController", shape="record", style="filled"];
+"nf_cloud_backend.database.Database" [color="aliceblue", fontcolor="black", label="nf_cloud_backend.database.Database", shape="record", style="filled"];
+"nf_cloud_backend.models.project.Project.Meta" [color="burlywood", fontcolor="black", label="nf_cloud_backend.models.project.Meta", shape="record", style="filled"];
+"nf_cloud_backend.models.project.Project" [color="burlywood", fontcolor="black", label="nf_cloud_backend.models.project.Project", shape="record", style="filled"];
+"nf_cloud_backend.models.user.User.Meta" [color="burlywood", fontcolor="black", label="nf_cloud_backend.models.user.Meta", shape="record", style="filled"];
+"nf_cloud_backend.models.user.User" [color="burlywood", fontcolor="black", label="nf_cloud_backend.models.user.User", shape="record", style="filled"];
+"nf_cloud_backend.server.Server" [color="aliceblue", fontcolor="black", label="nf_cloud_backend.server.Server", shape="record", style="filled"];
+"nf_cloud_backend.utility.command_line_interface.ComandLineInterface" [color="cadetblue", fontcolor="black", label="nf_cloud_backend.utility.command_line_interface.ComandLineInterface", shape="record", style="filled"];
+"nf_cloud_backend.utility.configuration.Configuration" [color="cadetblue", fontcolor="black", label="nf_cloud_backend.utility.configuration.Configuration", shape="record", style="filled"];
+"nf_cloud_backend.utility.headers.accept_language.AcceptLanguage" [color="cadetblue", fontcolor="black", label="nf_cloud_backend.utility.headers.accept_language.AcceptLanguage", shape="record", style="filled"];
+"nf_cloud_backend.utility.rabbit_mq.RabbitMQ" [color="cadetblue", fontcolor="black", label="nf_cloud_backend.utility.rabbit_mq.RabbitMQ", shape="record", style="filled"];
+}

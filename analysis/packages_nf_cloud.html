@@ -1,0 +1,110 @@
+<html>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+      <div class="mermaid">
+    
+        classDiagram
+          class nf_cloud_backend {
+          }
+          class __main__ {
+          }
+          class authorization {
+          }
+          class jwt {
+          }
+          class openid_connect {
+          }
+          class provider_type {
+          }
+          class utility {
+          }
+          class command_line_interface {
+          }
+          class constants {
+          }
+          class controllers {
+          }
+          class api {
+          }
+          class projects_controller {
+          }
+          class users_controller {
+          }
+          class workflows_controller {
+          }
+          class socketio_controller {
+          }
+          class database {
+          }
+          class models {
+          }
+          class project {
+          }
+          class user {
+          }
+          class server {
+          }
+          class utility {
+          }
+          class command_line_interface {
+          }
+          class configuration {
+          }
+          class headers {
+          }
+          class accept_language {
+          }
+          class cross_origin_resource_sharing {
+          }
+          class matomo {
+          }
+          class rabbit_mq {
+          }
+          nf_cloud_backend --> nf_cloud_backend
+          nf_cloud_backend --> jwt
+          nf_cloud_backend --> constants
+          nf_cloud_backend --> controllers
+          nf_cloud_backend --> models
+          nf_cloud_backend --> configuration
+          nf_cloud_backend --> cross_origin_resource_sharing
+          nf_cloud_backend --> matomo
+          __main__ --> command_line_interface
+          jwt --> user
+          openid_connect --> nf_cloud_backend
+          openid_connect --> jwt
+          openid_connect --> provider_type
+          openid_connect --> utility
+          openid_connect --> user
+          openid_connect --> configuration
+          utility --> provider_type
+          utility --> configuration
+          command_line_interface --> database
+          command_line_interface --> server
+          command_line_interface --> command_line_interface
+          projects_controller --> nf_cloud_backend
+          projects_controller --> project
+          projects_controller --> configuration
+          users_controller --> nf_cloud_backend
+          users_controller --> jwt
+          users_controller --> openid_connect
+          users_controller --> provider_type
+          users_controller --> constants
+          users_controller --> configuration
+          workflows_controller --> nf_cloud_backend
+          workflows_controller --> configuration
+          socketio_controller --> nf_cloud_backend
+          database --> configuration
+          project --> nf_cloud_backend
+          project --> configuration
+          user --> nf_cloud_backend
+          server --> nf_cloud_backend
+          server --> configuration
+          command_line_interface --> configuration
+          command_line_interface --> rabbit_mq
+          matomo --> accept_language
+          rabbit_mq --> nf_cloud_backend
+          rabbit_mq --> configuration
+  
+       </div>
+  </body>
+</html>

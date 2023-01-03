@@ -38,3 +38,7 @@ class WeblogStructure(BaseModel):
     utcTime: str
     trace: Optional[WeblogTrace]
     metadata: Optional[WeblogMetadata]  # only apperas in completed message
+
+
+class WeblogListStructure(BaseModel):
+    __root__ : list[WeblogStructure]
