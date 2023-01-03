@@ -1,0 +1,93 @@
+Jan-02 10:26:49.878 [main] DEBUG nextflow.cli.Launcher - $> nextflow test_tabea.nf -with-report result.log -with-trace -with-timeline timeline -with-weblog 'http://127.0.0.1:8000/weblog'
+Jan-02 10:26:49.947 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.09.2-edge
+Jan-02 10:26:49.966 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/tabeatheunicorn/.nextflow/plugins; core-plugins: nf-amazon@1.10.2,nf-azure@0.14.0,nf-codecommit@0.1.2,nf-console@1.0.3,nf-ga4gh@1.0.3,nf-google@1.4.2,nf-tower@1.5.2,nf-wave@0.4.1
+Jan-02 10:26:49.974 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jan-02 10:26:49.975 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jan-02 10:26:49.998 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Jan-02 10:26:50.008 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jan-02 10:26:50.054 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Jan-02 10:26:50.068 [main] INFO  nextflow.cli.CmdRun - Launching `test_tabea.nf` [backstabbing_lichterman] DSL2 - revision: 5ed99082c7
+Jan-02 10:26:50.069 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jan-02 10:26:50.069 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Jan-02 10:26:50.078 [main] DEBUG nextflow.secret.LocalSecretsProvider - Secrets store: /home/tabeatheunicorn/.nextflow/secrets/store.json
+Jan-02 10:26:50.084 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@6d467c87] - activable => nextflow.secret.LocalSecretsProvider@6d467c87
+Jan-02 10:26:50.140 [main] DEBUG nextflow.Session - Session UUID: a73fbace-64e2-4395-8ad3-fb151b241d2f
+Jan-02 10:26:50.140 [main] DEBUG nextflow.Session - Run name: backstabbing_lichterman
+Jan-02 10:26:50.141 [main] DEBUG nextflow.Session - Executor pool size: 8
+Jan-02 10:26:50.172 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 22.09.2-edge build 5765
+  Created: 07-09-2022 19:45 UTC (21:45 CEST)
+  System: Linux 5.10.16.3-microsoft-standard-WSL2
+  Runtime: Groovy 3.0.12 on OpenJDK 64-Bit Server VM 11.0.16+8-post-Ubuntu-0ubuntu120.04
+  Encoding: UTF-8 (UTF-8)
+  Process: 10364@Tabeas-Surface-7 [127.0.1.1]
+  CPUs: 8 - Mem: 7.6 GB (3.9 GB) - Swap: 2 GB (2 GB)
+Jan-02 10:26:50.189 [main] DEBUG nextflow.Session - Work-dir: /home/tabeatheunicorn/nf-cloud-studiprojekt2223/test_workflows/test_tabea/work [ext2/ext3]
+Jan-02 10:26:50.189 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/tabeatheunicorn/nf-cloud-studiprojekt2223/test_workflows/test_tabea/bin
+Jan-02 10:26:50.197 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jan-02 10:26:50.206 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jan-02 10:26:50.223 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+Jan-02 10:26:50.242 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jan-02 10:26:50.326 [main] DEBUG nextflow.Session - Session start
+Jan-02 10:26:50.332 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /home/tabeatheunicorn/nf-cloud-studiprojekt2223/test_workflows/test_tabea/trace.txt
+Jan-02 10:26:50.452 [Actor Thread 2] DEBUG nextflow.trace.WebLogObserver - Successfully sent message to http://127.0.0.1:8000/weblog -- received status code 200.
+Jan-02 10:26:50.903 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jan-02 10:26:50.966 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jan-02 10:26:50.966 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jan-02 10:26:50.972 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Jan-02 10:26:50.975 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=7.6 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
+Jan-02 10:26:51.065 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jan-02 10:26:51.066 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jan-02 10:26:51.068 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: echoSequence, waitNSeconds
+Jan-02 10:26:51.068 [main] DEBUG nextflow.Session - Igniting dataflow network (4)
+Jan-02 10:26:51.069 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > waitNSeconds
+Jan-02 10:26:51.069 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > echoSequence
+Jan-02 10:26:51.070 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Jan-02 10:26:51.071 [main] DEBUG nextflow.Session - Session await
+Jan-02 10:26:51.209 [Task submitter] INFO  nextflow.Session - [c6/782174] Submitted process > echoSequence (2)
+Jan-02 10:26:51.210 [pool-2-thread-1] INFO  nextflow.script.BaseScript - Echo: b
+Jan-02 10:26:51.216 [Task submitter] INFO  nextflow.Session - [64/cd4718] Submitted process > echoSequence (3)
+Jan-02 10:26:51.216 [pool-2-thread-2] INFO  nextflow.script.BaseScript - Echo: c
+Jan-02 10:26:51.217 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: echoSequence (2); status: COMPLETED; exit: -; error: -; workDir: /home/tabeatheunicorn/nf-cloud-studiprojekt2223/test_workflows/test_tabea/work/c6/7821746a66fb8d8f436c37b0502675]
+Jan-02 10:26:51.219 [Task submitter] INFO  nextflow.Session - [bc/7fa153] Submitted process > echoSequence (1)
+Jan-02 10:26:51.219 [pool-2-thread-3] INFO  nextflow.script.BaseScript - Echo: a
+Jan-02 10:26:51.220 [Actor Thread 3] DEBUG nextflow.trace.WebLogObserver - Successfully sent message to http://127.0.0.1:8000/weblog -- received status code 200.
+Jan-02 10:26:51.222 [Actor Thread 3] DEBUG nextflow.trace.WebLogObserver - Successfully sent message to http://127.0.0.1:8000/weblog -- received status code 200.
+Jan-02 10:26:51.225 [Actor Thread 3] DEBUG nextflow.trace.WebLogObserver - Successfully sent message to http://127.0.0.1:8000/weblog -- received status code 200.
+Jan-02 10:26:51.229 [Actor Thread 3] DEBUG nextflow.trace.WebLogObserver - Successfully sent message to http://127.0.0.1:8000/weblog -- received status code 200.
+Jan-02 10:26:51.240 [Actor Thread 3] DEBUG nextflow.trace.WebLogObserver - Successfully sent message to http://127.0.0.1:8000/weblog -- received status code 200.
+Jan-02 10:26:51.248 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jan-02 10:26:51.260 [Task submitter] INFO  nextflow.Session - [40/c47bf6] Submitted process > waitNSeconds (3)
+Jan-02 10:26:51.268 [Actor Thread 3] DEBUG nextflow.trace.WebLogObserver - Successfully sent message to http://127.0.0.1:8000/weblog -- received status code 200.
+Jan-02 10:26:51.269 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jan-02 10:26:51.270 [Task submitter] INFO  nextflow.Session - [ae/a32ad4] Submitted process > waitNSeconds (1)
+Jan-02 10:26:51.274 [Actor Thread 3] DEBUG nextflow.trace.WebLogObserver - Successfully sent message to http://127.0.0.1:8000/weblog -- received status code 200.
+Jan-02 10:26:51.276 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jan-02 10:26:51.277 [Task submitter] INFO  nextflow.Session - [27/99bd3d] Submitted process > waitNSeconds (2)
+Jan-02 10:26:51.281 [Actor Thread 3] DEBUG nextflow.trace.WebLogObserver - Successfully sent message to http://127.0.0.1:8000/weblog -- received status code 200.
+Jan-02 10:26:51.315 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: echoSequence (3); status: COMPLETED; exit: -; error: -; workDir: /home/tabeatheunicorn/nf-cloud-studiprojekt2223/test_workflows/test_tabea/work/64/cd4718551169ca55c0a2776ca4f354]
+Jan-02 10:26:51.317 [Actor Thread 5] DEBUG nextflow.trace.WebLogObserver - Successfully sent message to http://127.0.0.1:8000/weblog -- received status code 200.
+Jan-02 10:26:51.319 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: echoSequence (1); status: COMPLETED; exit: -; error: -; workDir: /home/tabeatheunicorn/nf-cloud-studiprojekt2223/test_workflows/test_tabea/work/bc/7fa153f9635217506c263326c60ad9]
+Jan-02 10:26:51.320 [Actor Thread 7] DEBUG nextflow.trace.WebLogObserver - Successfully sent message to http://127.0.0.1:8000/weblog -- received status code 200.
+Jan-02 10:26:51.322 [Actor Thread 7] DEBUG nextflow.trace.WebLogObserver - Successfully sent message to http://127.0.0.1:8000/weblog -- received status code 200.
+Jan-02 10:26:51.326 [Actor Thread 7] DEBUG nextflow.trace.WebLogObserver - Successfully sent message to http://127.0.0.1:8000/weblog -- received status code 200.
+Jan-02 10:26:51.329 [Actor Thread 7] DEBUG nextflow.trace.WebLogObserver - Successfully sent message to http://127.0.0.1:8000/weblog -- received status code 200.
+Jan-02 10:26:51.334 [Actor Thread 7] DEBUG nextflow.trace.WebLogObserver - Successfully sent message to http://127.0.0.1:8000/weblog -- received status code 200.
+Jan-02 10:26:51.338 [Actor Thread 7] DEBUG nextflow.trace.WebLogObserver - Successfully sent message to http://127.0.0.1:8000/weblog -- received status code 200.
+Jan-02 10:26:55.326 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: waitNSeconds (3); status: COMPLETED; exit: 0; error: -; workDir: /home/tabeatheunicorn/nf-cloud-studiprojekt2223/test_workflows/test_tabea/work/40/c47bf6cd9b4ef3cdf2ed7d74403260]
+Jan-02 10:26:55.337 [Actor Thread 5] DEBUG nextflow.trace.WebLogObserver - Successfully sent message to http://127.0.0.1:8000/weblog -- received status code 200.
+Jan-02 10:26:59.332 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: waitNSeconds (2); status: COMPLETED; exit: 0; error: -; workDir: /home/tabeatheunicorn/nf-cloud-studiprojekt2223/test_workflows/test_tabea/work/27/99bd3dbdcf34cc94c6a49cd09ab9d0]
+Jan-02 10:26:59.339 [Actor Thread 7] DEBUG nextflow.trace.WebLogObserver - Successfully sent message to http://127.0.0.1:8000/weblog -- received status code 200.
+Jan-02 10:27:01.326 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: waitNSeconds (1); status: COMPLETED; exit: 0; error: -; workDir: /home/tabeatheunicorn/nf-cloud-studiprojekt2223/test_workflows/test_tabea/work/ae/a32ad469cec0c9914d927fc0048fa3]
+Jan-02 10:27:01.330 [main] DEBUG nextflow.Session - Session await > all processes finished
+Jan-02 10:27:01.331 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jan-02 10:27:01.333 [Actor Thread 5] DEBUG nextflow.trace.WebLogObserver - Successfully sent message to http://127.0.0.1:8000/weblog -- received status code 200.
+Jan-02 10:27:01.340 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=6; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=22s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=3; peakCpus=3; peakMemory=0; ]
+Jan-02 10:27:01.340 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Jan-02 10:27:01.343 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Jan-02 10:27:01.378 [main] DEBUG nextflow.trace.ReportObserver - Execution report summary data:
+  [{"cpuUsage":null,"process":"echoSequence","mem":null,"memUsage":null,"timeUsage":null,"vmem":null,"reads":null,"cpu":null,"time":{"mean":1.67,"min":1,"q1":1,"q2":1,"q3":2,"max":3,"minLabel":"echoSequence (3)","maxLabel":"echoSequence (2)","q1Label":"echoSequence (3)","q2Label":"echoSequence (1)","q3Label":"echoSequence (1)"},"writes":null},{"cpuUsage":{"mean":0.3,"min":0.2,"q1":0.2,"q2":0.2,"q3":0.35,"max":0.5,"minLabel":"waitNSeconds (2)","maxLabel":"waitNSeconds (3)","q1Label":"waitNSeconds (2)","q2Label":"waitNSeconds (1)","q3Label":"waitNSeconds (1)"},"process":"waitNSeconds","mem":{"mean":3736917.33,"min":3661824,"q1":3700736,"q2":3739648,"q3":3774464,"max":3809280,"minLabel":"waitNSeconds (3)","maxLabel":"waitNSeconds (2)","q1Label":"waitNSeconds (3)","q2Label":"waitNSeconds (1)","q3Label":"waitNSeconds (1)"},"memUsage":null,"timeUsage":null,"vmem":{"mean":16240640,"min":16240640,"q1":16240640,"q2":16240640,"q3":16240640,"max":16240640,"minLabel":"waitNSeconds (3)","maxLabel":"waitNSeconds (1)","q1Label":"waitNSeconds (3)","q2Label":"waitNSeconds (2)","q3Label":"waitNSeconds (2)"},"reads":{"mean":158488.67,"min":158488,"q1":158488,"q2":158488,"q3":158489,"max":158490,"minLabel":"waitNSeconds (3)","maxLabel":"waitNSeconds (1)","q1Label":"waitNSeconds (3)","q2Label":"waitNSeconds (2)","q3Label":"waitNSeconds (2)"},"cpu":{"mean":0.3,"min":0.2,"q1":0.2,"q2":0.2,"q3":0.35,"max":0.5,"minLabel":"waitNSeconds (2)","maxLabel":"waitNSeconds (3)","q1Label":"waitNSeconds (2)","q2Label":"waitNSeconds (1)","q3Label":"waitNSeconds (1)"},"time":{"mean":7339,"min":4006,"q1":6006,"q2":8006,"q3":9005.5,"max":10005,"minLabel":"waitNSeconds (3)","maxLabel":"waitNSeconds (1)","q1Label":"waitNSeconds (3)","q2Label":"waitNSeconds (2)","q3Label":"waitNSeconds (2)"},"writes":{"mean":174,"min":174,"q1":174,"q2":174,"q3":174,"max":174,"minLabel":"waitNSeconds (3)","maxLabel":"waitNSeconds (1)","q1Label":"waitNSeconds (3)","q2Label":"waitNSeconds (2)","q3Label":"waitNSeconds (2)"}}]
+Jan-02 10:27:01.938 [main] DEBUG nextflow.trace.TimelineObserver - Workflow completed -- rendering execution timeline
+Jan-02 10:27:02.002 [Actor Thread 5] DEBUG nextflow.trace.WebLogObserver - Successfully sent message to http://127.0.0.1:8000/weblog -- received status code 200.
+Jan-02 10:27:02.009 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Jan-02 10:27:02.022 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
