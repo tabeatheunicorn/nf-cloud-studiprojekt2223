@@ -1,14 +1,21 @@
 <template>
   <div>
-    <h1>HI</h1>
+    <h1>Test Overview for Weblog Messages</h1>
+    <websocket-connection-info-modal />
     <div id="progresgraph"></div>
-
-    hi!
+    <weblog-message-list />
   </div>
 </template>
 
 <script>
+import WebsocketConnectionInfoModal from "@/components/ProgressComponent/WebsocketConnectionInfoModal.vue";
+import WeblogMessageList from "@/components/ProgressComponent/WeblogMessageList.vue";
+
 export default {
+  components: {
+    WebsocketConnectionInfoModal,
+    WeblogMessageList,
+  },
   mounted() {
     var plot_data = [
       {
