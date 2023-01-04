@@ -1,7 +1,5 @@
 task_id	hash	native_id	name	status	exit	submit	duration	realtime	%cpu	peak_rss	peak_vmem	rchar	wchar
-1	f4/ca6f9f	-	echoSequence (1)	COMPLETED	-	2023-01-04 23:46:30.645	16ms	8ms	-	-	-	-	-
-6	4f/ab12d3	-	echoSequence (3)	COMPLETED	-	2023-01-04 23:46:30.661	93ms	1ms	-	-	-	-	-
-4	38/5e28e1	-	echoSequence (2)	COMPLETED	-	2023-01-04 23:46:30.667	92ms	1ms	-	-	-	-	-
-5	d9/b4616f	4550	waitNSeconds (3)	COMPLETED	0	2023-01-04 23:46:30.795	4.1s	4s	0.5%	3.5 MB	15.5 MB	154.8 KB	177 B
-3	ec/602b87	4524	waitNSeconds (2)	COMPLETED	0	2023-01-04 23:46:30.767	8.1s	8s	0.2%	3.6 MB	15.5 MB	154.8 KB	177 B
-2	bf/c3e052	4516	waitNSeconds (1)	COMPLETED	0	2023-01-04 23:46:30.753	10.1s	10s	0.3%	3.6 MB	15.5 MB	154.8 KB	177 B
+4	21/44d850	-	echoSequence (2)	COMPLETED	-	2023-01-04 23:54:20.342	12ms	7ms	-	-	-	-	-
+5	3a/3a1547	-	echoSequence (3)	COMPLETED	-	2023-01-04 23:54:20.355	96ms	3ms	-	-	-	-	-
+2	5f/77e681	-	echoSequence (1)	COMPLETED	-	2023-01-04 23:54:20.361	100ms	3ms	-	-	-	-	-
+6	fe/aca8ce	10103	waitNSeconds (3)	COMPLETED	0	2023-01-04 23:54:20.442	4.1s	4s	0.7%	3.5 MB	15.5 MB	154.8 KB	177 B

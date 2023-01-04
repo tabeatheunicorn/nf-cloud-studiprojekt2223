@@ -3,6 +3,7 @@
     <h1>Test Overview for Weblog Messages</h1>
     <websocket-connection-info-modal />
     <div id="progresgraph"></div>
+    <status-overview-weblog-messages />
     <weblog-message-list />
   </div>
 </template>
@@ -10,11 +11,13 @@
 <script>
 import WebsocketConnectionInfoModal from "@/components/ProgressComponent/WebsocketConnectionInfoModal.vue";
 import WeblogMessageList from "@/components/ProgressComponent/WeblogMessageList.vue";
+import StatusOverviewWeblogMessages from "@/components/ProgressComponent/StatusOverviewWeblogMessages";
 
 export default {
   components: {
     WebsocketConnectionInfoModal,
     WeblogMessageList,
+    StatusOverviewWeblogMessages,
   },
   mounted() {
     var plot_data = [
