@@ -31,6 +31,7 @@ export default {
     "~/plugins/api_error_handling.js",
     "~/plugins/bootstrap_modal_control.client.js",
     "~/plugins/socket.io.client.js",
+    "~/plugins/websocket_fastapi_testclient.js",
     "~/plugins/plotly-full.js"
   ],
 
@@ -52,7 +53,8 @@ export default {
 
   publicRuntimeConfig: {
     nf_cloud_backend_base_url: process.env.NF_CLOUD_BACKEND_BASE_URL || 'http://localhost:3001',
-    nf_cloud_backend_ws_url: process.env.NF_CLOUD_BACKEND_WS_URL || 'ws://localhost:3001'
+    nf_cloud_backend_ws_url: process.env.NF_CLOUD_BACKEND_WS_URL || 'ws://localhost:3001',
+    debug_fastapi_ws_url: 'ws://localhost:8765/ws/12345' // 12345 being the hardcoded client ID we are going to use
   },
 
   server: {
