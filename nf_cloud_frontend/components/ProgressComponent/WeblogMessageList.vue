@@ -11,7 +11,7 @@ export default {
   name: "WeblogMessageList",
   computed: {
     messages() {
-      return weblogMessageService.messages;
+      return weblogMessageService.messages.items;
     },
   },
 };

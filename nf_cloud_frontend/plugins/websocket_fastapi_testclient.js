@@ -6,6 +6,7 @@ export default ({ app }, inject) => {
     const fastapi_socket = new WebSocket(`ws://localhost:8765/ws/${client_id}`);
 
       fastapi_socket.onmessage = function(event) {
+        console.log(weblogMessageService);
         weblogMessageService.receiveMessage(event.data);
         console.log(event.data);
       };

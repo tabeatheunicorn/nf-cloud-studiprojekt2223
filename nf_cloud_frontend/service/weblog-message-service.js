@@ -1,10 +1,14 @@
+import Vue from 'vue';
 class WeblogMessageService {
     constructor() {
-      this.messages = ["testmessage"]
+      this.messages = Vue.observable({
+        items : ["testmessage"]
+      })
     }
   
     addMessage(message) {
-      this.messages.push(message)
+      this.messages.items.push(message);
+      // set(this.messages, this.messages.length, message);
     }
 
     receiveMessage(message) {
@@ -13,4 +17,4 @@ class WeblogMessageService {
     }
   }
   
-  export default new WeblogMessageService()
+  export default new WeblogMessageService();
