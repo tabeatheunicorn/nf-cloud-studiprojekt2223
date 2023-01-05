@@ -2,7 +2,7 @@ import Vue from 'vue';
 class WeblogMessageService {
     constructor() {
       this.messages = Vue.observable({
-        items : ["testmessage"]
+        items : []
       })
     }
   
@@ -12,8 +12,8 @@ class WeblogMessageService {
     }
 
     receiveMessage(message) {
-        console.log("Received message.", message)
-        this.addMessage(message)
+      const new_element = JSON.parse(message);
+      this.addMessage(new_element);
     }
   }
   

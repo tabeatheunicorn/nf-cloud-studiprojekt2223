@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <li v-for="message in messages" :key="message">{{ message }}</li>
+    <li v-for="(message, index) in messages" :key="index">{{ message }}</li>
   </ul>
 </template>
 
