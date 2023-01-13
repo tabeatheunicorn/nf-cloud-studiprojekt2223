@@ -34,10 +34,11 @@ async def root():
 
 @app.post("/weblog")
 async def post_weblog_nextflow(data: WeblogStructure):
-    if not "process" in data.event:
-        overall_messages.append(data)
-    else:
-        process_messages.append(data)
+    # if not "process" in data.event:
+    #     overall_messages.append(data)
+    # else:
+    #     process_messages.append(data)
+    overall_messages.append(data)
     await manager.broadcast(data.json())
     print("Broadcast done")
 

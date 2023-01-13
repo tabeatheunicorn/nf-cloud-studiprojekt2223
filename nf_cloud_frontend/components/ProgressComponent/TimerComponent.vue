@@ -1,8 +1,8 @@
 <template>
   <div>
     <p>
-      Die verstrichene Zeit seit dem Erhalt der Nachricht beträgt:
-      {{ elapsedTime }} Sekunden
+      Running since:
+      {{ elapsedTime }}s
     </p>
   </div>
 </template>
@@ -13,16 +13,14 @@ export default {
   data() {
     return {
       startTime: null,
+      elapsedTime: null,
     };
-  },
-  computed: {
-    elapsedTime() {
-      return Math.floor((Date.now() - this.startTime) / 1000);
-    },
   },
   created() {
     this.startTime = Date.now();
-    setInterval(() => {}, 1000);
+    setInterval(() => {
+      this.elapsedTime = Math.floor((Date.now() - this.startTime) / 1000);
+    }, 1000);
   },
 };
 </script>

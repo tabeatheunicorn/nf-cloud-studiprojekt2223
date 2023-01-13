@@ -5,7 +5,14 @@
         <div class="card-header">Run {{ runname }}</div>
         <div class="card-body">
           <p>Running since {{ firstMessageTimestamp }}</p>
-          <p>Run until {{ lastMessageTimestamp }}</p>
+          <p>
+            <template v-if="lastMessageTimestamp">
+              Run until {{ lastMessageTimestamp }}
+            </template>
+            <template v-else>
+              <timer-component :start-time="firstMessageTimestamp" />
+            </template>
+          </p>
           <button @click="showMessages = !showMessages">
             {{ showMessages ? "Hide" : "Show" }} messages
           </button>
@@ -19,10 +26,11 @@
 <script>
 import weblogMessageService from "@/service/weblog-message-service";
 import WeblogMessageList from "@/components/ProgressComponent/WeblogMessageList";
+import TimerComponent from "@/components/ProgressComponent/TimerComponent.vue";
 
 export default {
   name: "ProcessRunOverviewCard",
-  components: { WeblogMessageList },
+  components: { WeblogMessageList, TimerComponent },
   props: {
     runname: {
       type: String,
