@@ -16,7 +16,7 @@ app = FastAPI()
 manager = ConnectionManager()
 
 process_messages: WeblogListStructure = []
-overall_messages: WeblogListStructure = []
+# overall_messages: WeblogListStructure = []
 
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
@@ -38,7 +38,7 @@ async def post_weblog_nextflow(data: WeblogStructure):
     #     overall_messages.append(data)
     # else:
     #     process_messages.append(data)
-    overall_messages.append(data)
+    process_messages.append(data)
     await manager.broadcast(data.json())
     print("Broadcast done")
 

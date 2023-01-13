@@ -205,16 +205,16 @@ $(function() {
 
   // Nextflow report data
   window.data = {
-    "elapsed": "12.1s",
-    "beginningMillis": 1673598581521,
-    "endingMillis": 1673598593634,
+    "elapsed": "12.3s",
+    "beginningMillis": 1673602723621,
+    "endingMillis": 1673602735909,
     "processes": [
-        {"label": "echoSequence (2)", "cached": false, "index": 0, "times": [{"starting_time": 1673598582658, "ending_time": 1673598582668}, {"starting_time": 1673598582668, "ending_time": 1673598582675, "label": "17ms \/ -"}]},
-        {"label": "echoSequence (1)", "cached": false, "index": 0, "times": [{"starting_time": 1673598582677, "ending_time": 1673598582768}, {"starting_time": 1673598582768, "ending_time": 1673598582769, "label": "92ms \/ -"}]},
-        {"label": "echoSequence (3)", "cached": false, "index": 0, "times": [{"starting_time": 1673598582683, "ending_time": 1673598582772}, {"starting_time": 1673598582772, "ending_time": 1673598582774, "label": "91ms \/ -"}]},
-        {"label": "waitNSeconds (3)", "cached": false, "index": 1, "times": [{"starting_time": 1673598582751, "ending_time": 1673598582779}, {"starting_time": 1673598582779, "ending_time": 1673598586785, "label": "4.1s \/ 3.7 MB"}, {"starting_time": 1673598586785, "ending_time": 1673598586833}]},
-        {"label": "waitNSeconds (1)", "cached": false, "index": 1, "times": [{"starting_time": 1673598582762, "ending_time": 1673598582780}, {"starting_time": 1673598582780, "ending_time": 1673598592787, "label": "10.1s \/ 3.5 MB"}, {"starting_time": 1673598592787, "ending_time": 1673598592854}]},
-        {"label": "waitNSeconds (2)", "cached": false, "index": 1, "times": [{"starting_time": 1673598582774, "ending_time": 1673598582868}, {"starting_time": 1673598582868, "ending_time": 1673598590874, "label": "8.1s \/ 3.5 MB"}]}
+        {"label": "echoSequence (1)", "cached": false, "index": 0, "times": [{"starting_time": 1673602724952, "ending_time": 1673602724956}, {"starting_time": 1673602724956, "ending_time": 1673602724964, "label": "12ms \/ -"}]},
+        {"label": "echoSequence (2)", "cached": false, "index": 0, "times": [{"starting_time": 1673602724965, "ending_time": 1673602725057}, {"starting_time": 1673602725057, "ending_time": 1673602725099, "label": "134ms \/ -"}]},
+        {"label": "echoSequence (3)", "cached": false, "index": 0, "times": [{"starting_time": 1673602724971, "ending_time": 1673602725108}, {"starting_time": 1673602725108, "ending_time": 1673602725120, "label": "149ms \/ -"}]},
+        {"label": "waitNSeconds (1)", "cached": false, "index": 1, "times": [{"starting_time": 1673602725103, "ending_time": 1673602725162}, {"starting_time": 1673602725162, "ending_time": 1673602735171, "label": "10.2s \/ 3.7 MB"}, {"starting_time": 1673602735171, "ending_time": 1673602735258}]},
+        {"label": "waitNSeconds (3)", "cached": false, "index": 1, "times": [{"starting_time": 1673602725146, "ending_time": 1673602725164}, {"starting_time": 1673602725164, "ending_time": 1673602729172, "label": "4.1s \/ 3.7 MB"}, {"starting_time": 1673602729172, "ending_time": 1673602729262}]},
+        {"label": "waitNSeconds (2)", "cached": false, "index": 1, "times": [{"starting_time": 1673602725166, "ending_time": 1673602725262}, {"starting_time": 1673602725262, "ending_time": 1673602733331, "label": "8.2s \/ 3.5 MB"}, {"starting_time": 1673602733331, "ending_time": 1673602733341}]}
     ]
 }
 ;
