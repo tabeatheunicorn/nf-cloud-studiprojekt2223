@@ -44,8 +44,32 @@ class WeblogMessageService {
     return filtered;
   }
 
-  getUniqueNames(messages){
+  getUniqueNames(messages) {
     return [...new Set(messages.map((message) => message.runName))];
+  }
+
+  /**
+   * getFirstSubmittedMessage - returns the utcTime property of the first message
+   * that matches the specified conditions.
+   *
+   * @param  {Array} messages  an array of messages
+   * @param  {String} runName  the runName to be matched
+   * @return {String | null}  returns utcTime property of the first matched message or null if not found
+   */
+  getFirstSubmittedMessage(messages, runName) {
+    const message = messages.find(message => 
+      message.runName && message.runName === runName && 
+      message.event && message.event === "process_submitted"
+    )
+    return message ? message.utcTime : null
+  }
+
+  getFirstCompletedMessage(messages, runName){
+    const message = messages.find(message => 
+      message.runName && message.runName === runName && 
+      message.event && message.event === "process_completed"
+    )
+    return message ? message.utcTime : null
   }
 }
 
