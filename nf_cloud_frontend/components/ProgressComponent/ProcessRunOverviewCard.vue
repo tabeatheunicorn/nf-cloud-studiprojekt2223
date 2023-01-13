@@ -6,7 +6,10 @@
         <div class="card-body">
           <p>Running since {{ firstMessageTimestamp }}</p>
           <p>Run until {{ lastMessageTimestamp }}</p>
-          <weblog-message-list :runName="runname" />
+          <button @click="showMessages = !showMessages">
+            {{ showMessages ? "Hide" : "Show" }} messages
+          </button>
+          <weblog-message-list v-if="showMessages" :runName="runname" />
         </div>
       </div>
     </div>
@@ -39,7 +42,9 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+      showMessages: false,
+    };
   },
   methods: {},
 };
