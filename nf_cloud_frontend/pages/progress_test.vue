@@ -3,8 +3,11 @@
     <h1>Test Overview for Weblog Messages</h1>
     <websocket-connection-info-modal />
     <div id="progresgraph"></div>
+
     <status-overview-weblog-messages />
-    <process-run-overview-card :runname="'grave_visvesvaraya'" />
+    <div v-for="runName in uniqueRunNames" :key="runName">
+      <process-run-overview-card :runname="runName" />
+    </div>
     <weblog-message-list />
   </div>
 </template>
@@ -14,6 +17,7 @@ import WebsocketConnectionInfoModal from "@/components/ProgressComponent/Websock
 import WeblogMessageList from "@/components/ProgressComponent/WeblogMessageList.vue";
 import StatusOverviewWeblogMessages from "@/components/ProgressComponent/StatusOverviewWeblogMessages";
 import ProcessRunOverviewCard from "@/components/ProgressComponent/ProcessRunOverviewCard";
+import weblogMessageService from "@/service/weblog-message-service";
 
 export default {
   components: {
@@ -35,6 +39,14 @@ export default {
       responsive: true,
     };
     this.$plotly.newPlot("progresgraph", plot_data, plot_layout, plot_config);
+  },
+  computed: {
+    messages() {
+      return weblogMessageService.messages.items;
+    },
+    uniqueRunNames() {
+      return weblogMessageService.getUniqueNames(this.messages);
+    },
   },
 };
 </script>

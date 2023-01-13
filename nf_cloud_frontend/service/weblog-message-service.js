@@ -59,7 +59,7 @@ class WeblogMessageService {
   getFirstSubmittedMessage(messages, runName) {
     const message = messages.find(message => 
       message.runName && message.runName === runName && 
-      message.event && message.event === "process_submitted"
+      message.event && message.event === "started"
     )
     return message ? message.utcTime : null
   }
@@ -67,7 +67,7 @@ class WeblogMessageService {
   getFirstCompletedMessage(messages, runName){
     const message = messages.find(message => 
       message.runName && message.runName === runName && 
-      message.event && message.event === "process_completed"
+      message.event && message.event === "completed"
     )
     return message ? message.utcTime : null
   }
