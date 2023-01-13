@@ -1,21 +1,52 @@
 <template>
   <div>
-  Number of messages: {{ messages.length }}  
-  <div class="card-container">
-    <div class="card">
-      <div class="card-header">Scheduled</div>
-      <div class="card-body">{{ scheduledMessages.length }}</div>
-    </div>
-    <div class="card" :class="{ 'yellow': runningMessages.length < scheduledMessages.length, 'green': runningMessages.length >= scheduledMessages.length }">
-      <div class="card-header">Running</div>
-      <div class="card-body">{{ runningMessages.length }} / {{ scheduledMessages.length }}</div>
-    </div>
-    <div class="card" :class="{ 'yellow': completedMessages.length < scheduledMessages.length, 'green': completedMessages.length >= scheduledMessages.length }">
-      <div class="card-header">Completed</div>
-      <div class="card-body">{{ completedMessages.length }} / {{ scheduledMessages.length }}</div>
-    </div>
-  </div></div>
+    <h2>Message Info</h2>
+    Number of messages: {{ messages.length }}
 
+    <h2>Runs detected:</h2>
+    <div v-for="runName in uniqueRunNames" :key="runName">
+      {{ runName }}
+    </div>
+
+    <div>
+      <label for="run-name-selector">Select run name:</label>
+      <select id="run-name-selector" v-model="selectedRunName">
+        <option v-for="runName in uniqueRunNames" :key="runName">{{ runName }}</option>
+      </select>
+    </div>
+
+    <h2>Execution Status</h2>
+    <div class="card-container">
+      <div class="card">
+        <div class="card-header">Scheduled</div>
+        <div class="card-body">{{ scheduledMessages.length }}</div>
+      </div>
+      <div
+        class="card"
+        :class="{
+          yellow: runningMessages.length < scheduledMessages.length,
+          green: runningMessages.length >= scheduledMessages.length,
+        }"
+      >
+        <div class="card-header">Running</div>
+        <div class="card-body">
+          {{ runningMessages.length }} / {{ scheduledMessages.length }}
+        </div>
+      </div>
+      <div
+        class="card"
+        :class="{
+          yellow: completedMessages.length < scheduledMessages.length,
+          green: completedMessages.length >= scheduledMessages.length,
+        }"
+      >
+        <div class="card-header">Completed</div>
+        <div class="card-body">
+          {{ completedMessages.length }} / {{ scheduledMessages.length }}
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style>
@@ -25,7 +56,7 @@
   justify-content: space-evenly;
 }
 
-  .card {
+.card {
   margin: 1em;
   /* Other styles for the card */
 }
@@ -43,19 +74,26 @@ import weblogMessageService from "@/service/weblog-message-service";
 
 export default {
   name: "StatusOverviewWeblogMessages",
+  data() {
+    return {
+      selectedRunName: "",
+    };
+  },
   computed: {
     messages() {
       return weblogMessageService.messages.items;
     },
     scheduledMessages() {
-      const filtered = this.messages.filter((message) => message.trace  && message.trace.status === "SUBMITTED");
-      return filtered;
+      return weblogMessageService.filterMessagesByTraceStatus(this.messages, "SUBMITTED");
     },
     runningMessages() {
-      return this.messages.filter((message) => message.trace && message.trace.status === "RUNNING");
+      return weblogMessageService.filterMessagesByTraceStatus(this.messages, "RUNNING");
     },
     completedMessages() {
-      return this.messages.filter((message) => message.trace && message.trace.status === "COMPLETED");
+      return weblogMessageService.filterMessagesByTraceStatus(this.messages, "COMPLETED");
+    },
+    uniqueRunNames() {
+      return weblogMessageService.getUniqueNames(this.messages);
     },
   },
 };
